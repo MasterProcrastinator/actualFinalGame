@@ -17,6 +17,7 @@
 		BF18859F2B23707500357E76 /* actualFinalGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF18859E2B23707500357E76 /* actualFinalGameTests.swift */; };
 		BF1885A92B23707500357E76 /* actualFinalGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1885A82B23707500357E76 /* actualFinalGameUITests.swift */; };
 		BF1885AB2B23707500357E76 /* actualFinalGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1885AA2B23707500357E76 /* actualFinalGameUITestsLaunchTests.swift */; };
+		BF1C23DD2B2716F400FEE720 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1C23DC2B2716F400FEE720 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BF1885A42B23707500357E76 /* actualFinalGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = actualFinalGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1885A82B23707500357E76 /* actualFinalGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actualFinalGameUITests.swift; sourceTree = "<group>"; };
 		BF1885AA2B23707500357E76 /* actualFinalGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actualFinalGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF1C23DC2B2716F400FEE720 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				BF1885842B23707400357E76 /* AppDelegate.swift */,
 				BF1885862B23707400357E76 /* SceneDelegate.swift */,
 				BF1885882B23707400357E76 /* ViewController.swift */,
+				BF1C23DC2B2716F400FEE720 /* Deck.swift */,
 				BF18858A2B23707400357E76 /* Main.storyboard */,
 				BF1885902B23707400357E76 /* Assets.xcassets */,
 				BF1885922B23707400357E76 /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				BF1885892B23707400357E76 /* ViewController.swift in Sources */,
 				BF1885852B23707400357E76 /* AppDelegate.swift in Sources */,
+				BF1C23DD2B2716F400FEE720 /* Deck.swift in Sources */,
 				BF18858F2B23707400357E76 /* actualFinalGame.xcdatamodeld in Sources */,
 				BF1885872B23707400357E76 /* SceneDelegate.swift in Sources */,
 			);
