@@ -18,15 +18,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerImageOutlet2: UIImageView!
     
     @IBOutlet weak var playerImageOutlet3: UIImageView!
+    
     @IBOutlet weak var playerImageOutlet4: UIImageView!
     
     @IBOutlet weak var playerImageOutlet5: UIImageView!
     var test = 0
-    
+    var handValue = 0
     var deck = createDeck()
     var dealer: [Card] = []
     var player: [Card] = []
     var count = 1
+    var isBust = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,26 +43,57 @@ class ViewController: UIViewController {
         
         playerImageOutlet1.image = UIImage(named: "\(createImage(name: player[0]))")
 
-
     }
 
     @IBAction func hitAction(_ sender: UIButton) {
-        if(count < 5){
-            player.append(deck.removeLast())
-            if(count == 1){
-                playerImageOutlet2.image = UIImage(named: "\(createImage(name: player[count]))")
-            }
-            if(count == 2){
-                playerImageOutlet3.image = UIImage(named: "\(createImage(name: player[count]))")
-            }
-            if(count == 3){
-                playerImageOutlet4.image = UIImage(named: "\(createImage(name: player[count]))")
-            }
-            if(count == 4){
-                playerImageOutlet5.image = UIImage(named: "\(createImage(name: player[count]))")
-            }
-            count += 1
+        if(count >= 5){
+            return
         }
+        
+        if (isBust) {
+            return
+        }
+    
+        player.append(deck.removeLast())
+        
+        if(count == 1){
+            playerImageOutlet2.image = UIImage(named: "\(createImage(name: player[count]))")
+        }
+        if(count == 2){
+            playerImageOutlet3.image = UIImage(named: "\(createImage(name: player[count]))")
+        }
+        if(count == 3){
+            playerImageOutlet4.image = UIImage(named: "\(createImage(name: player[count]))")
+        }
+        if(count == 4){
+            playerImageOutlet5.image = UIImage(named: "\(createImage(name: player[count]))")
+        }
+        count += 1
+        
+        var countCards = 0
+        var numAces: Int = 0
+        
+        for card in player {
+            countCards += card.worth.value
+            if(card.worth.value == 11){
+                numAces += 1
+            }
+        }
+        
+        if(countCards > 21){
+            for i in 0..<numAces{
+                countCards -= 10
+                if(countCards <= 21){
+                    break
+                }
+            }
+        }
+        handValue = countCards
+
+        if(countCards > 21) {
+            isBust = true
+        }
+        print("\(countCards)")
     }
 
     @IBAction func standAction(_ sender: UIButton) {

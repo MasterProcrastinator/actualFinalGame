@@ -25,7 +25,7 @@ enum CardValue: CaseIterable{
     var value: Int {
         switch self{
         case.ace:
-            return 1
+            return 11
         case.two:
             return 2
         case.three:
