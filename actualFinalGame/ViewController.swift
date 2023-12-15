@@ -13,6 +13,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageOutlet2: UIImageView!
     
+    @IBOutlet weak var imageOutlet3: UIImageView!
+    
+    @IBOutlet weak var imageOutlet4: UIImageView!
+    
+    @IBOutlet weak var imageOutlet5: UIImageView!
+    
     @IBOutlet weak var playerImageOutlet1: UIImageView!
     
     @IBOutlet weak var playerImageOutlet2: UIImageView!
@@ -24,11 +30,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerImageOutlet5: UIImageView!
     var test = 0
     var handValue = 0
+    var dealerValue = 0
+    var dealerCount = 0
     var deck = createDeck()
     var dealer: [Card] = []
     var player: [Card] = []
     var count = 1
     var isBust = false
+    var dealerIsBust = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,7 +62,7 @@ class ViewController: UIViewController {
         if (isBust) {
             return
         }
-    
+
         player.append(deck.removeLast())
         
         if(count == 1){
@@ -93,12 +102,55 @@ class ViewController: UIViewController {
         if(countCards > 21) {
             isBust = true
         }
+
         print("\(countCards)")
+        
     }
 
     @IBAction func standAction(_ sender: UIButton) {
         imageOutlet2.image = UIImage(named:"\(createImage(name: dealer[1]))")
         
+        var countCards = 0
+        var numAces: Int = 0
+        
+        for card in player {
+            countCards += card.worth.value
+            if(card.worth.value == 11){
+                numAces += 1
+            }
+        }
+        
+        if(countCards > 21){
+            for i in 0..<numAces{
+                countCards -= 10
+                if(countCards <= 21){
+                    break
+                }
+            }
+        }
+        dealerValue = countCards
+
+        if(countCards > 21) {
+            dealerIsBust = true
+        }
+        
+        while(dealerValue < 16 && dealer.count != 5){
+            dealer.append(deck.removeLast())
+        }
+        
+        for cards in dealer{
+            dealerCount += 1
+        }
+        
+        if(dealerCount >= 2){
+            imageOutlet3.image = UIImage(named: "\(createImage(name: dealer[2]))")
+        }
+        if(dealerCount >= 3){
+            imageOutlet4.image = UIImage(named: "\(createImage(name: dealer[3]))")
+        }
+        if(dealerCount >= 4){
+            imageOutlet5.image = UIImage(named: "\(createImage(name: dealer[4]))")
+        }
         
     }
     

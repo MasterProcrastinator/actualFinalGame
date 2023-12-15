@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_back" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-0S-mmg">
-                                <rect key="frame" x="64" y="59" width="109" height="128"/>
+                                <rect key="frame" x="63" y="59" width="90" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card_back" translatesAutoresizingMaskIntoConstraints="NO" id="FnB-xQ-adM">
-                                <rect key="frame" x="231" y="59" width="108" height="128"/>
+                                <rect key="frame" x="106" y="59" width="90" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpm-WE-y0r">
@@ -66,6 +66,18 @@
                                 <rect key="frame" x="240" y="483" width="90" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6M6-TL-ZA9">
+                                <rect key="frame" x="150" y="59" width="90" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kae-hD-MvH">
+                                <rect key="frame" x="193" y="59" width="90" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ie-Ql-bBe">
+                                <rect key="frame" x="240" y="59" width="90" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,6 +85,9 @@
                     <connections>
                         <outlet property="imageOutlet1" destination="Lh7-0S-mmg" id="snb-L9-aYV"/>
                         <outlet property="imageOutlet2" destination="FnB-xQ-adM" id="Tnl-Gl-gLH"/>
+                        <outlet property="imageOutlet3" destination="6M6-TL-ZA9" id="Ouf-hs-eI5"/>
+                        <outlet property="imageOutlet4" destination="kae-hD-MvH" id="cQ4-FF-hmE"/>
+                        <outlet property="imageOutlet5" destination="3Ie-Ql-bBe" id="QXu-eU-rVo"/>
                         <outlet property="playerImageOutlet1" destination="o5s-PR-O5c" id="rHR-pS-DjQ"/>
                         <outlet property="playerImageOutlet2" destination="i20-sT-FrD" id="Yeh-a4-D1y"/>
                         <outlet property="playerImageOutlet3" destination="7xr-er-zZ6" id="9Ws-aY-Omp"/>
