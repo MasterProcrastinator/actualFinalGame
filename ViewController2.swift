@@ -52,7 +52,7 @@ class ViewController2: UIViewController {
             upgradeOutlet2.text = "bought"
             Bank.multiplier = 3
         }
-        while(Bank.upgrade1 == true && Bank.upgrade2 == true){
+        if(Bank.upgrade1 == true && Bank.upgrade2 == true){
             Bank.multiplier = 4
         }
 
@@ -104,6 +104,17 @@ class ViewController2: UIViewController {
             Bank.money -= 5000
             currentBalance.text = "$\(Bank.money)"
             upgradeOutlet1.text = "bought"
+            if(Bank.upgrade1 == true){
+                upgradeOutlet1.text = "bought"
+                Bank.multiplier = 3
+            }
+            if(Bank.upgrade2 == true){
+                upgradeOutlet2.text = "bought"
+                Bank.multiplier = 3
+            }
+            if(Bank.upgrade1 == true && Bank.upgrade2 == true){
+                Bank.multiplier = 4
+            }
         }
         else if(Bank.upgrade1 == true){
             present(alert2, animated: true, completion: nil)
@@ -122,11 +133,22 @@ class ViewController2: UIViewController {
             Bank.money -= 15000
             currentBalance.text = "$\(Bank.money)"
             upgradeOutlet2.text = "bought"
+            if(Bank.upgrade1 == true){
+                upgradeOutlet1.text = "bought"
+                Bank.multiplier = 3
+            }
+            if(Bank.upgrade2 == true){
+                upgradeOutlet2.text = "bought"
+                Bank.multiplier = 3
+            }
+            if(Bank.upgrade1 == true && Bank.upgrade2 == true){
+                Bank.multiplier = 4
+            }
         }
-        else if(Bank.upgrade1 == true){
+        else if(Bank.upgrade2 == true){
             present(alert2, animated: true, completion: nil)
         }
-        else if(Bank.money < 5000){
+        else if(Bank.money < 15000){
             present(alert, animated: true, completion: nil)
         }
         else{
