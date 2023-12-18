@@ -285,15 +285,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fmv-2a-RPN">
+                                <rect key="frame" x="311" y="452" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="crimeSwitch:" destination="c3F-qr-ilf" eventType="valueChanged" id="pPk-2F-cAb"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Crime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDY-ZP-YLj">
+                                <rect key="frame" x="244" y="457" width="46" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WeQ-7U-5Oz"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="AccentColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bank" image="bitcoinsign" catalog="system" id="jah-qz-3UT"/>
                     <connections>
                         <outlet property="currentBalance" destination="vji-HO-qSd" id="I0P-79-dxr"/>
                         <outlet property="currentDebt" destination="Xgm-V4-0KH" id="chV-pY-kQV"/>
+                        <outlet property="switchOutlet" destination="fmv-2a-RPN" id="oHT-Kr-QB6"/>
                         <outlet property="textFieldOutlet" destination="IPh-mk-e0s" id="vym-zL-7QI"/>
                         <outlet property="upgradeOutlet1" destination="ngB-zr-o57" id="vru-s5-SY9"/>
                         <outlet property="upgradeOutlet2" destination="I1S-co-txX" id="DTC-TH-U2N"/>
@@ -309,6 +324,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Qpb-E1-s5w" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7m-rF-bWT">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -331,6 +347,9 @@
         </namedColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

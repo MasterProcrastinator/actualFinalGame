@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController2: UIViewController {
 
+    @IBOutlet weak var switchOutlet: UISwitch!
+    
     @IBOutlet weak var currentBalance: UILabel!
     
     @IBOutlet weak var currentDebt: UILabel!
@@ -26,7 +28,7 @@ class ViewController2: UIViewController {
     let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
     
     var input : Double?
-    
+    var crime = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,6 +40,7 @@ class ViewController2: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        switchOutlet.setOn(false, animated: false)
         currentBalance.text = "$\(Bank.money)"
         currentDebt.text = "$\(Bank.debt)"
         
@@ -55,13 +58,31 @@ class ViewController2: UIViewController {
 
     }
 
+    @IBAction func crimeSwitch(_ sender: UISwitch) {
+        if(switchOutlet.isOn == true){
+            crime = true
+        }
+        else{
+            crime = false
+        }
+    }
     @IBAction func loanAction(_ sender: UIButton) {
-        Bank.debt -= 1000
-        Bank.money += 1000
-        currentDebt.text = "$\(Bank.debt)"
-        currentBalance.text = "$\(Bank.money)"
+        if(crime == true){
+            Bank.debt = 0
+            Bank.money += 10000
+            currentDebt.text = "$\(Bank.debt)"
+            currentBalance.text = "$\(Bank.money)"
+        }
+        else{Bank.debt -= 1000
+            Bank.money += 1000
+            currentDebt.text = "$\(Bank.debt)"
+            currentBalance.text = "$\(Bank.money)"
+        }
     }
     @IBAction func payAction(_ sender: UIButton) {
+        let debtAlert = UIAlertController(title: "Error", message: "you don't have that much money", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        debtAlert.addAction(okAction)
         input = Double(textFieldOutlet.text!)
         if let temp = input{
             if(Bank.money >= temp){
@@ -71,9 +92,6 @@ class ViewController2: UIViewController {
                 currentDebt.text = "$\(Bank.debt)"
             }
             else{
-                let debtAlert = UIAlertController(title: "Error", message: "you don't have that much money", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                debtAlert.addAction(okAction)
                 present(debtAlert, animated: true, completion: nil)
             }
         }

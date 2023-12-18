@@ -269,7 +269,53 @@ class ViewController: UIViewController {
             }
         }
         
+        while(countCards2 < 16 && dealer.count != 5){
+            countCards2 = 0
+            numAces = 0
+            
+            for card in dealer {
+                countCards2 += card.worth.value
+                if(card.worth.value == 11){
+                    numAces += 1
+                }
+            }
+            
+            if(countCards2 > 21){
+                for i in 0..<numAces{
+                    countCards2 -= 10
+                    if(countCards2 <= 21){
+                        break
+                    }
+                }
+            }
+            if(countCards2 < 16){
+                dealer.append(deck.removeLast())
+            }
+        }
         
+        print("\(countCards2)")
+        
+        
+        
+
+        
+        dealerValue = countCards2
+
+        for cards in dealer{
+            dealerCount += 1
+            print(dealer[dealerCount-1].worth)
+            
+            if(dealerCount == 3){
+                imageOutlet3.image = UIImage(named: "\(createImage(name: dealer[2]))")
+            }
+            if(dealerCount == 4){
+                imageOutlet4.image = UIImage(named: "\(createImage(name: dealer[3]))")
+            }
+            if(dealerCount == 5){
+                imageOutlet5.image = UIImage(named: "\(createImage(name: dealer[4]))")
+            }
+        }
+
         if(countCards2 > 21) {
             
             Bank.money += bet*Double(Bank.multiplier)
@@ -289,26 +335,6 @@ class ViewController: UIViewController {
             present(twentyOneDealerAlert, animated: true, completion: nil)
             currentBetOutlet.text = "$0"
             return
-        }
-        
-        dealerValue = countCards2
-        
-        while(dealerValue < 16 && dealer.count != 5){
-            dealer.append(deck.removeLast())
-        }
-        print("\(countCards2)")
-        for cards in dealer{
-            dealerCount += 1
-        }
-        
-        if(dealerCount >= 3){
-            imageOutlet3.image = UIImage(named: "\(createImage(name: dealer[2]))")
-        }
-        if(dealerCount >= 4){
-            imageOutlet4.image = UIImage(named: "\(createImage(name: dealer[3]))")
-        }
-        if(dealerCount >= 5){
-            imageOutlet5.image = UIImage(named: "\(createImage(name: dealer[4]))")
         }
         
         if(dealerValue > handValue){
