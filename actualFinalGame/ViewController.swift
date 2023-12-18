@@ -79,6 +79,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hitAction(_ sender: UIButton) {
+        let scamAlert = UIAlertController(title: "Error", message: "A minimum of $500 must be bet", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        scamAlert.addAction(alertAction)
+        if(bet < 500){
+            present(scamAlert, animated: true, completion: nil)
+            return
+        }
         let bustAlert = UIAlertController(title: "Bust", message: "You've gone over 21 and lost", preferredStyle: .alert)
         let twentyOneAlert = UIAlertController(title: "hit 21!", message: "instant victory for you", preferredStyle: .alert)
         let replayAction = UIAlertAction(title: "Play Again", style: .default){ (action) in
@@ -194,6 +201,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func standAction(_ sender: UIButton) {
+        let scamAlert = UIAlertController(title: "Error", message: "A minimum of $500 must be bet", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        scamAlert.addAction(alertAction)
+        if(bet < 500){
+            present(scamAlert, animated: true, completion: nil)
+            return
+        }
         let dealerBustAlert = UIAlertController(title: "Dealer has Busted", message: "You've Won!", preferredStyle: .alert)
         
         let victoryAlert = UIAlertController(title: "Congratulations", message: "Your hand won", preferredStyle: .alert)
