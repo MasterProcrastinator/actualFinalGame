@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1277EF2B30065100AFEB86 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1277EE2B30065100AFEB86 /* ViewController2.swift */; };
 		BF1885852B23707400357E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1885842B23707400357E76 /* AppDelegate.swift */; };
 		BF1885872B23707400357E76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1885862B23707400357E76 /* SceneDelegate.swift */; };
 		BF1885892B23707400357E76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1885882B23707400357E76 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF1277EE2B30065100AFEB86 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		BF1885812B23707400357E76 /* actualFinalGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = actualFinalGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1885842B23707400357E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF1885862B23707400357E76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		BF1885782B23707400357E76 = {
 			isa = PBXGroup;
 			children = (
+				BF1277EE2B30065100AFEB86 /* ViewController2.swift */,
 				BF1885832B23707400357E76 /* actualFinalGame */,
 				BF18859D2B23707500357E76 /* actualFinalGameTests */,
 				BF1885A72B23707500357E76 /* actualFinalGameUITests */,
@@ -269,6 +272,7 @@
 				BF1C23DD2B2716F400FEE720 /* Deck.swift in Sources */,
 				BF18858F2B23707400357E76 /* actualFinalGame.xcdatamodeld in Sources */,
 				BF1885872B23707400357E76 /* SceneDelegate.swift in Sources */,
+				BF1277EF2B30065100AFEB86 /* ViewController2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

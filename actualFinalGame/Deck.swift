@@ -56,7 +56,14 @@ struct Card {
     
     
 }
-
+class Bank {
+    static var money = 0.0
+    static var debt = 0.0
+    static var multiplier = 2
+    static var upgrade1 = false
+    static var upgrade2 = false
+    
+}
 func createDeck() -> [Card]{
     var deck: [Card] = []
     for s in Suit.allCases{
