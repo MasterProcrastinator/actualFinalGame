@@ -392,10 +392,10 @@ class ViewController: UIViewController {
         let alert2 = UIAlertController(title: "Error", message: "game in session", preferredStyle: .alert)
         
         let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        
+        let scamAlert = UIAlertController(title: "Error", message: "A minimum of $500 must be bet", preferredStyle: .alert)
         input = Double(textFieldOutlet.text!)
         if let temp = input{
-            if(Bank.money >= temp && gameInSession == false){
+            if(temp > 0 && Bank.money >= temp && gameInSession == false && temp >= 500){
                 Bank.money -= temp
                 bet += temp
                 currentBetOutlet.text = "$\(bet)"
@@ -403,6 +403,13 @@ class ViewController: UIViewController {
                 gameInSession = true
             }
            
+            else if(temp < 500){
+                let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                scamAlert.addAction(alertAction)
+                present(scamAlert, animated: true, completion: nil)
+                
+            }
+            
             else if(gameInSession == true){
                 alert2.addAction(alertAction)
                 present(alert2, animated: true, completion: nil)
